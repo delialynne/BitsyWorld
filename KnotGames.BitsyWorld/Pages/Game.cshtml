@@ -1,0 +1,39 @@
+﻿@page
+@model KnotGames.BitsyWorld.Pages.GameModel
+@{
+    ViewData["Title"] = "Game";
+}
+
+<h1>Game</h1>
+
+<div id="start" class="story">
+    <p>Welcome to the game. Delia will fill this in later. Good luck!</p>
+    <h1> Mua hahahaha!!!!</h1>
+    <p><img src="~/img/loki-laugh.gif" /></p>
+    <button onclick="showCard('runaway')">Run away</button> 
+    <button onclick="showCard('laughtoo')">Laugh too</button>
+</div>
+
+<div id="runaway" class="story">
+    <p>You try to run away. But you fall off a cliff and die.</p>
+    <h1>Sorry.</h1>
+    <button onclick="showCard('start')">Retry</button>
+</div>
+
+<div id="laughtoo" class="story">
+    <p>You laugh with Loki.</p>
+    <p>You laugh forever.</p>
+    <p>And ever.</p>
+    <p>You win. the End.</p>
+    <button onclick="showCard('start')">Retry</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $("#start").fadeIn("slow");
+
+    function showCard(name) {
+        $(".story").hide();
+        $("#" + name).fadeIn("slow");
+    }
+</script>
